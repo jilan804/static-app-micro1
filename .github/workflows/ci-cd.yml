@@ -28,7 +28,11 @@ jobs:
        docker push 292090429255.dkr.ecr.ap-south-1.amazonaws.com/dockerfile:latest
     - name: kubectl-eks
       uses: qazz92/kubectl@1.0.3
-    - name: eks 
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESSKEY }}
+        aws-secret-access-key: ${{ secrets.SCREATEKEY_KEY }}
+        aws-region: ap-south-1
+    - name: eksinstalltion 
       run: |
        kubectl apply -f nginx.yaml
     
