@@ -15,8 +15,16 @@ jobs:
         unzip awscli-bundle.zip
         sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
     - name: Docker ECR
-      uses: appleboy/docker-ecr-action@v0.0.3
+      uses: aws-actions/amazon-ecr-login@v1
       with:
-        username: ${{ secrets.AWS_ACCESSKEY }}
-        password: ${{ secrets.SCREATEKEY_KEY }}
+       username: AWS_ACCESSKEY
+       password: SCREATEKEY_KEY
+       region: ap-south-1
+       tags: latest
+       dockerfile: Dockerfile
+       context: .
+        
+        
+        
+    
     
