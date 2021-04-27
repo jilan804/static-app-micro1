@@ -19,7 +19,7 @@ jobs:
       with:
        username: AWS_ACCESSKEY
        password: SCREATEKEY_KEY
-       region: ap-south-1
+       region: AWS_REGION
        tags: latest
        dockerfile: Dockerfile
        context: .
